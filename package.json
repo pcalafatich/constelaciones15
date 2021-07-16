@@ -14,14 +14,14 @@
     "chart.js": "^2.9.3",
     "classnames": "^2.2.6",
     "formik": "^2.1.4",
+    "konva": "6.0.0",
     "react": "^16.13.1",
     "react-chartjs-2": "^2.9.0",
     "react-dom": "^16.13.1",
+    "react-konva": "^16.13.0-3",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.0",
-    "konva": "6.0.0",
-    "react-konva": "^16.13.0-3",
     "simple-peer": "^9.7.2",
     "socket.io-client": "2.3.0",
     "styled-components": "^5.1.1",
@@ -30,14 +30,14 @@
     "yup": "^0.28.5"
   },
   "scripts": {
-      "start": "react-scripts start",
-      "build": "react-scripts build",
-      "test": "react-scripts test",
-      "eject": "react-scripts eject",
-      "build:styles": "postcss src/tailwind.css -o src/tailwind.css",
-      "prebuild": "npm run build:styles",
-      "prestart": "npm run build:styles"
-    },
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "build:styles": "postcss src/tailwind.css -o src/tailwind.css",
+    "prebuild": "npm run build:styles",
+    "prestart": "npm run build:styles"
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
