@@ -29,7 +29,7 @@ const navItems = [
    /* LINK DE INGRESO USERS PARA SESION ABIERTA  */
    {
     label: 'Ingreso Sesion',
-    path: 'constelacion',
+    path: 'ingresosesion',
     icon: faMale,
     allowedRoles: ['user']
   },

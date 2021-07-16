@@ -24,7 +24,7 @@ import Constelacion from './ui/Constelacion';
 
 const Dashboard = lazy(() => import('./pages/Dashboard'));
 const CrearSesion = lazy(() => import('./pages/CrearSesion'));
-const IngresoSesion = lazy(() => import('./pages/IngresoSesion'))
+//const IngresoSesion = lazy(() => import('./pages/IngresoSesion'))
 const Account = lazy(() => import('./pages/Account'));
 const Settings = lazy(() => import('./pages/Settings'));
 const Users = lazy(() => import('./pages/Users'));
@@ -112,9 +112,11 @@ const AppRoutes = () => {
             <CrearSesion />
           </AdminRoute>
           <AuthenticatedRoute path="/ingresosesion">
-            <IngresoSesion />
+            <>
+              <JoinSesion />
+              <Constelacion />
+            </>
           </AuthenticatedRoute>
-
           <SesionRoute path="/constelacion">
             <>
               <JoinSesion />
