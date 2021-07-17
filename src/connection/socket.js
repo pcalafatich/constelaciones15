@@ -6,7 +6,7 @@ const socket = io(URL)
 let mySocketId = null
 
 socket.on("createNewSesion", statusUpdate => {
-    console.log("(socket.js) Se ha creado una nueva sesion! ID Sesion: " +
+    console.log("(socket.js) Se ha creado una NUEVA sesion! ID Sesion: " +
         statusUpdate.sesionId + " Socket id: " + statusUpdate.mySocketId)
     mySocketId = statusUpdate.mySocketId
 })
