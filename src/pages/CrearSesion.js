@@ -1,10 +1,9 @@
 import React, {
   // useState,
-  useContext
+  //  useContext
   // useEffect
 } from 'react';
-import PageTitle from '../components/common/PageTitle';
-import { AuthContext } from './../context/AuthContext';
+// import { AuthContext } from './../context/AuthContext';
 const socket  = require('../connection/socket').socket
 
 
@@ -12,12 +11,12 @@ const socket  = require('../connection/socket').socket
 const CrearSesion = () => {
 
   // creamos el nombre de la sesion
-const sesiondiaria = "sesion-name";
-//Emitimos el evento al servidor para crear la sesion y le pasamos el identificador
-socket.emit('createNewSesion', sesiondiaria);
+  const sesiondiaria = "sesion-name";
+  //Emitimos el evento al servidor para crear la sesion y le pasamos el identificador
+  socket.emit('createNewSesion', sesiondiaria);
 
-const auth = useContext(AuthContext);
-const { authState } = auth;
+  //const auth = useContext(AuthContext);
+  //const { authState } = auth;
 
   return (
     <React.Fragment>
