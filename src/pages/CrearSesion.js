@@ -5,7 +5,7 @@ import React, {
 } from 'react';
 import PageTitle from '../components/common/PageTitle';
 import { AuthContext } from './../context/AuthContext';
-import { socket, mySocketId } from '../connection/socket';
+const socket  = require('../connection/socket').socket
 
 
 
