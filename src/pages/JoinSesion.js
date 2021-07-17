@@ -1,6 +1,6 @@
-import React from 'react'
-import { socket } from '../connection/socket'
-
+import React, { useContext } from 'react';
+import { socket } from '../connection/socket';
+import { AuthContext } from '../context/AuthContext';
 /**
  * 'Join Sesion' es donde nos unimos a la sesion creada
  */
@@ -22,17 +22,18 @@ const JoinSesionRoom = (sesionid, userName, isAdmin) => {
     socket.emit("userJoinSesion", idData)
 }
 
-const JoinSesion = (props) => {
-    /**
-     * En las props vienen el userName y isAdmin en true
-     * Extraemos el 'sesionId' de la URL ya que es el ID de la Sala.
-     */
-
+const JoinSesion = () => {
+    
+    const auth = useContext(AuthContext);
+    const { authState } = auth;
+    const userName = authState.userInfo.firstName;
+    const isAdmin = auth.isAdmin();
     const { sesionid } = 'sesion-name';
-    // console.log("(JoinSesion) sesionid:", sesionid);
-    // console.log("(JoinSesion) isAdmin: ", props.isAdmin);
+    console.log("(JoinSesion) userName:", userName);
+    console.log("(JoinSesion) sesionid:", sesionid);
+    console.log("(JoinSesion) isAdmin: ", isAdmin);
 
-    JoinSesionRoom(sesionid, props.userName, props.isAdmin)
+    JoinSesionRoom(sesionid, userName, isAdmin)
 
     return <div>
         <h4 style = {{textAlign: "center"}}>Constelaciones Familiares !</h4>
