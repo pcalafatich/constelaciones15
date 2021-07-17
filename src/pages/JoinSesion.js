@@ -28,7 +28,7 @@ const JoinSesion = () => {
     const { authState } = auth;
     const userName = authState.userInfo.firstName;
     const isAdmin = auth.isAdmin();
-    const { sesionid } = 'sesion-name';
+    const sesionid  = 'sesion-name';
     console.log("(JoinSesion) userName:", userName);
     console.log("(JoinSesion) sesionid:", sesionid);
     console.log("(JoinSesion) isAdmin: ", isAdmin);
