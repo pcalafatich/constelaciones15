@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { socket } from '../connection/socket';
 import { AuthContext } from '../context/AuthContext';
+const socket  = require('../connection/socket').socket
 /**
  * 'Join Sesion' es donde nos unimos a la sesion creada
  */

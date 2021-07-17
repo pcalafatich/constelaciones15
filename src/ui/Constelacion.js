@@ -99,7 +99,7 @@ class Constelacion extends React.Component {
         return (
         <React.Fragment>
             <div className = "flex gap-4 p-4" > 
-                <div className = " h-720 w-32 bg-green-300 rounded border-2">55</div>
+                <div className = " h-720 w-32 bg-green-300 rounded border-2">PANEL</div>
                 <div className = " h-720 w-72 bg-gray-400 rounded border-2">
                 <Stage width = {720} height = {720}>
                     <Layer>
