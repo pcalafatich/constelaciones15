@@ -20,15 +20,10 @@ const auth = useContext(AuthContext);
 const { authState } = auth;
 
   return (
-    <>
-      <PageTitle title="Crear Sesion" />
-      <p className="text-black">
-      {authState.userInfo.firstName}
-      </p>     
-      <p className="text-black">
-          {mySocketId}
-      </p>
-    </>
+    <React.Fragment>
+      <JoinSesion/>
+      <Constelacion/>
+    </React.Fragment>
   );
 };
 
