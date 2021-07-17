@@ -3,6 +3,8 @@ import React, {
   //  useContext
   // useEffect
 } from 'react';
+import JoinSesion from '../pages/JoinSesion';
+import Constelacion from '../ui/Constelacion';
 // import { AuthContext } from './../context/AuthContext';
 const socket  = require('../connection/socket').socket
 
