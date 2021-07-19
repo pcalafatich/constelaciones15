@@ -125,7 +125,8 @@ class Constelacion extends React.Component {
                 <div className = "flex flex-col h-720 w-48 items-center gap-4 rounded border-2">
                     <div className = "bg-gray-400 w-full mx-auto text-center" >OPCIONES</div>
                         <button
-                        className="flex rounded-full items-center py-2 px-3 bg-gradient focus:outline-none shadow-lg" onClick={}>
+                        className="flex rounded-full items-center py-2 px-3 bg-gradient focus:outline-none shadow-lg"
+                        onClick={() => this.agregarFigura()}>
                         <div className="px-3">
                         <p className="text-white">
                             Agregar Figura
