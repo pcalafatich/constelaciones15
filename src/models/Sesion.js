@@ -65,36 +65,36 @@ class Sesion {
     }
 
     agregarFigura(){
-        console.log('Entrado');
-        const to2D = {
-            105:0, 195:1, 285: 2, 375: 3, 465: 4, 555: 5, 645: 6, 735: 7
-        }
+        // console.log('Entrado');
+        // const to2D = {
+        //     105:0, 195:1, 285: 2, 375: 3, 465: 4, 555: 5, 645: 6, 735: 7
+        // }
         
-        const figuras = ["hombre_amarillo", "hombre_rojo", "hombre_verde", "hombre_celeste","hombre_naranja", "hombre_gris", "hombre_negro", "hombre_azul"]
-        const figurasId = ["Hombre Amarillo", "Hombre Rojo", "Hombre Verde", "Hombre Celeste", "Hombre Naranja", "Hombre Gris", "Hombre Negro", "Hombre Azul"]
-        // console.log("SESION - figuraId", figuraId)
-        let actualTablero = this.getTablero();
+        // const figuras = ["hombre_amarillo", "hombre_rojo", "hombre_verde", "hombre_celeste","hombre_naranja", "hombre_gris", "hombre_negro", "hombre_azul"]
+        // const figurasId = ["Hombre Amarillo", "Hombre Rojo", "Hombre Verde", "Hombre Celeste", "Hombre Naranja", "Hombre Gris", "Hombre Negro", "Hombre Azul"]
+        // // console.log("SESION - figuraId", figuraId)
+        // let actualTablero = this.getTablero();
 
-        const figuraId = figurasId[0];
-        console.log('FiguraID:', figuraId)
+        // const figuraId = figurasId[0];
+        // console.log('FiguraID:', figuraId)
         
-        const coordenadasFigura = this.encontrarFigura(actualTablero, figuraId);
-        console.log('Coordenadas figura:', coordenadasFigura);
+        // const coordenadasFigura = this.encontrarFigura(actualTablero, figuraId);
+        // console.log('Coordenadas figura:', coordenadasFigura);
 
-        (coordenadasFigura === null) ?
-                //  console.log('El valor es null')
-               actualTablero[0][7].setFigura(new Personaje(figuras[0], figurasId[0]))
-                :
-                // console.log('El valor NO es null')
-               actualTablero[1][7].setFigura(new Personaje(figuras[1], figurasId[1]))
+        // (coordenadasFigura === null) ?
+        //         //  console.log('El valor es null')
+        //        actualTablero[0][7].setFigura(new Personaje(figuras[0], figurasId[0]))
+        //         :
+        //         // console.log('El valor NO es null')
+        //        actualTablero[1][7].setFigura(new Personaje(figuras[1], figurasId[1]))
 
        
 
 
-        // actualizamos el Tablero
-        this.setTablero(actualTablero);
+        // // actualizamos el Tablero
+        // this.setTablero(actualTablero);
         
-        console.log(actualTablero[0][7]);   
+        // console.log(actualTablero[0][7]);   
 
 
         // tableroInicial[0][0].setFigura(new Personaje(figuras[0], figurasId[0]))
