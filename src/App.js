@@ -91,10 +91,8 @@ const SesionRoute = ({ children, ...rest }) => {
       {...rest}
       render={() =>
         auth.isAuthenticated() ? (
-          <>
-            <JoinSesion />
-            <Constelacion />
-          </>) : (
+          <Redirect to="/constelacion" />
+          ) : (
           <Redirect to="/login" />
         )
       }
@@ -113,12 +111,6 @@ const AppRoutes = () => {
           <AdminRoute path="/crearsesion">
             <CrearSesion />
           </AdminRoute>
-          <AuthenticatedRoute path="/ingresosesion">
-            <>
-              <JoinSesion />
-              <Constelacion />
-            </>
-          </AuthenticatedRoute>
           <SesionRoute path="/constelacion">
             <>
               <JoinSesion />
