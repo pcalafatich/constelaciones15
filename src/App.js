@@ -91,9 +91,11 @@ const SesionRoute = ({ children, ...rest }) => {
       {...rest}
       render={() =>
         auth.isAuthenticated() ? (
-          <Constelacion/>
-        ) : (
-          <Redirect to="/" />
+          <>
+            <JoinSesion />
+            <Constelacion />
+          </>) : (
+          <Redirect to="/login" />
         )
       }
     ></Route>

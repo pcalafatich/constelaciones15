@@ -35,9 +35,7 @@ const JoinSesion = () => {
 
     JoinSesionRoom(sesionid, userName, isAdmin)
 
-    return <div>
-        <h4 style = {{textAlign: "center"}}>Constelaciones Familiares !</h4>
-    </div>
+    return <div></div>
 }
 
 export default JoinSesion

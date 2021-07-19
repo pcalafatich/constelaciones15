@@ -4,7 +4,7 @@ import { AuthContext } from './../context/AuthContext';
 import GradientLink from '../components/common/GradientLink';
 import GradientBar from './../components/common/GradientBar';
 import logo from './../images/logo.png';
-import constelacion from './../images/constelaciones-home.jpg';
+import homeimg from './../images/constelaciones-home.jpg';
 
 const Home = () => {
   const auth = useContext(AuthContext);
@@ -41,7 +41,7 @@ const Home = () => {
         <div className="opacity-60">
           <img
             className="object-fill w-screen"
-            src={constelacion}
+            src={homeimg}
             alt="Home"
             
           />
@@ -52,7 +52,7 @@ const Home = () => {
               Constelaciones Familiares
             </h1>
             <p className="text-gray-400 text-md sm:text-2xl sm:mt-10 mt-4">
-            Una técnica psicológica sistémica, que permite activar la Fuerza de la Vida, de Amor y de Sanación de la familia, mediante la sanación de conflictos que se transmitieron inconscientemente de generación tras generación, de la misma manera que la información genética.
+            Una técnica psicológica sistémica, que permite activar la Fuerza de la Vida, de Amor y de Sanación de la familia, mediante la resolución de conflictos que se transmitieron inconscientemente de generación tras generación, de la misma manera que la información genética.
             </p>
             <div className="mt-4 sm:mt-10 w-48">
               <GradientLink

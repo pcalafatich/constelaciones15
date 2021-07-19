@@ -9,19 +9,19 @@ class Cuadro {
     setFigura(newFigura) {
         if (newFigura === null && this.figuraIdEnEsteCuadro === null) {
             return
-        } else if (newFigura === null) {
-            // la funcion que llama a Cuadro quiere la Figura que esta en él.
-            this.figuraIdEnEsteCuadro.setCuadro(undefined)
-            this.figuraIdEnEsteCuadro = null
+        // } else if (newFigura === null) {
+        //     // la funcion que llama a Cuadro quiere la Figura que esta en él.
+        //     this.figuraIdEnEsteCuadro.setCuadro(undefined)
+        //     this.figuraIdEnEsteCuadro = null
         } else if (this.figuraIdEnEsteCuadro === null) {
             // la funcion que llama a Cuadro quiere asignarle una nueva Figura
             this.figuraIdEnEsteCuadro = newFigura
             newFigura.setCuadro(this)
-        } else if (this.getFiguraIdEnEsteCuadro() !== newFigura.id) {
-            // la funcion que llama a Cuadro quiere cambiar la Figura que esta ubicada en él
-            console.log("Figura cambiada????")
-            this.figuraIdEnEsteCuadro = newFigura
-            newFigura.setCuadro(this)
+        // } else if (this.getFiguraIdEnEsteCuadro() !== newFigura.id) {
+        //     // la funcion que llama a Cuadro quiere cambiar la Figura que esta ubicada en él
+        //     console.log("Figura cambiada????")
+        //     this.figuraIdEnEsteCuadro = newFigura
+        //     newFigura.setCuadro(this)
         }
     }
 

@@ -1,6 +1,9 @@
 import React, {
     useContext
 } from 'react';
+import GradientBar from '../components/common/GradientBar';
+import Navbar from '../components/Navbar';
+// import FiguraDropdown from '../components/FiguraDropdown';
 import { AuthContext } from '../context/AuthContext';
 import Sesion from '../models/Sesion';
 import Cuadro from '../models/Cuadro';
@@ -20,12 +23,20 @@ class Constelacion extends React.Component {
 
     componentDidMount() {
 
-      socket.on('movimiento_ajeno', move => {
+    socket.on('movimiento_ajeno', move => {
           console.log("movimiento ajeno: " + move.selectedId + ", " + move.finalPosition);
           this.moverFigura(move.selectedId, move.finalPosition, this.state.sesionState, false)
-      })
-    }
+        })
 
+    // socket.on('agrega_ajeno', agrega => {
+    //     console.log("movimiento ajeno: " + agrega.selectedId + ", " + agrega.finalPosition);
+    //     this.agregarFigura(agrega.selectedId, agrega.finalPosition, this.state.sesionState, false)
+    //     })
+    
+    
+   }
+
+    
     startDragging = (e) => {
         this.setState({
             draggedPieceTargetId: e.target.attrs.id
@@ -61,6 +72,18 @@ class Constelacion extends React.Component {
         })
     }
 
+    agregarFigura = () => {
+        const actualSesion = this.state.sesionState;
+        // const actualTablero = actualsesion.getTablero()
+        actualSesion.agregarFigura()
+
+        // establecemos el state.
+        this.setState({
+            draggedPieceTargetId: "",
+            sesionState: actualSesion
+        })
+
+    }
 
     endDragging = (e) => {
         const actualSesion = this.state.sesionState
@@ -99,7 +122,18 @@ class Constelacion extends React.Component {
         return (
         <React.Fragment>
             <div className = "flex gap-4 p-4" > 
-                <div className = " h-720 w-32 bg-green-300 rounded border-2">PANEL</div>
+                <div className = "flex flex-col h-720 w-48 items-center gap-4 rounded border-2">
+                    <div className = "bg-gray-400 w-full mx-auto text-center" >OPCIONES</div>
+                        <button
+                        className="flex rounded-full items-center py-2 px-3 bg-gradient focus:outline-none shadow-lg"
+                        onClick={() => this.agregarFigura()}>
+                        <div className="px-3">
+                        <p className="text-white">
+                            Agregar Figura
+                        </p>
+                        </div>
+                    </button>                   
+                  </div>
                 <div className = " h-720 w-72 bg-gray-400 rounded border-2">
                 <Stage width = {720} height = {720}>
                     <Layer>
@@ -206,8 +240,16 @@ const ConstelacionWrapper = () => {
 
     return (
     <React.Fragment>
-          <div>
-            <div style={{ display: "flex" }}>
+        <GradientBar />
+        <div className="flex flex-col w-full border-l border-gray-200">
+          <div className="p-4 border-b border-gray-300 bg-white">
+            <Navbar />
+          </div>
+
+
+
+        <div>
+            <div className = "flex">
               <Constelacion
                 playAudio={play}
                 sesionId={sesionId}
@@ -220,8 +262,8 @@ const ConstelacionWrapper = () => {
               />*/}
             </div>
           </div>
-   
-    </React.Fragment>
+        </div>
+      </React.Fragment>
     );
 };
 

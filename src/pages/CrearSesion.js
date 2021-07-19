@@ -3,8 +3,11 @@ import React, {
   //  useContext
   // useEffect
 } from 'react';
-import JoinSesion from '../pages/JoinSesion';
-import Constelacion from '../ui/Constelacion';
+import {
+  Redirect
+} from 'react-router-dom';
+// import JoinSesion from '../pages/JoinSesion';
+// import Constelacion from '../ui/Constelacion';
 // import { AuthContext } from './../context/AuthContext';
 const socket  = require('../connection/socket').socket
 
@@ -21,11 +24,7 @@ const CrearSesion = () => {
   //const { authState } = auth;
 
   return (
-    <React.Fragment>
-      <JoinSesion/>
-      <Constelacion/>
-    </React.Fragment>
-  );
+    <Redirect to="/constelacion" />  );
 };
 
 export default CrearSesion;

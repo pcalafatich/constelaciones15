@@ -64,6 +64,53 @@ class Sesion {
         this.setTablero(actualTablero)
     }
 
+    agregarFigura(){
+        console.log('Entrado');
+        const to2D = {
+            105:0, 195:1, 285: 2, 375: 3, 465: 4, 555: 5, 645: 6, 735: 7
+        }
+        
+        const figuras = ["hombre_amarillo", "hombre_rojo", "hombre_verde", "hombre_celeste","hombre_naranja", "hombre_gris", "hombre_negro", "hombre_azul"]
+        const figurasId = ["Hombre Amarillo", "Hombre Rojo", "Hombre Verde", "Hombre Celeste", "Hombre Naranja", "Hombre Gris", "Hombre Negro", "Hombre Azul"]
+        // console.log("SESION - figuraId", figuraId)
+        let actualTablero = this.getTablero();
+
+        const figuraId = figurasId[0];
+        console.log('FiguraID:', figuraId)
+        
+        const coordenadasFigura = this.encontrarFigura(actualTablero, figuraId);
+        console.log('Coordenadas figura:', coordenadasFigura);
+
+        (coordenadasFigura === null) ?
+                //  console.log('El valor es null')
+               actualTablero[0][7].setFigura(new Personaje(figuras[0], figurasId[0]))
+                :
+                // console.log('El valor NO es null')
+               actualTablero[1][7].setFigura(new Personaje(figuras[1], figurasId[1]))
+
+       
+
+
+        // actualizamos el Tablero
+        this.setTablero(actualTablero);
+        
+        console.log(actualTablero[0][7]);   
+
+
+        // tableroInicial[0][0].setFigura(new Personaje(figuras[0], figurasId[0]))
+        // tableroInicial[0][1].setFigura(new Personaje(figuras[1], figurasId[1]))
+        // tableroInicial[0][2].setFigura(new Personaje(figuras[2], figurasId[2]))
+        // tableroInicial[0][3].setFigura(new Personaje(figuras[3], figurasId[3]))
+        // tableroInicial[0][4].setFigura(new Personaje(figuras[4], figurasId[4]))
+        // tableroInicial[0][5].setFigura(new Personaje(figuras[5], figurasId[5]))
+        // tableroInicial[0][6].setFigura(new Personaje(figuras[6], figurasId[6]))
+        // tableroInicial[0][7].setFigura(new Personaje(figuras[7], figurasId[7]))
+        console.log('Salido');
+        return
+    }
+    
+    
+
     encontrarFigura(Tablero, figuraId) {
       // tablero, String -> [Int, Int]
       //  console.log("figura buscada: " + figuraId)
@@ -71,6 +118,8 @@ class Sesion {
             for (let j = 0; j < 8; j++) {
                 if (Tablero[i][j].getFiguraIdEnEsteCuadro() === figuraId) {
                     return [j, i]
+                } else {
+                    return null;
                 }
             }
         }
@@ -90,6 +139,7 @@ class Sesion {
                 tableroInicial[i].push(cuadrovacio)
             }
         }
+        
         // Definimos ubicacion inicial de las figuras
         const figuras = ["hombre_amarillo", "hombre_rojo", "hombre_verde", "hombre_celeste","hombre_naranja", "hombre_gris", "hombre_negro", "hombre_azul"]
         const figurasId = ["Hombre Amarillo", "Hombre Rojo", "Hombre Verde", "Hombre Celeste", "Hombre Naranja", "Hombre Gris", "Hombre Negro", "Hombre Azul"]
